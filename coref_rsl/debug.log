@@ -1,0 +1,180 @@
+2016-10-31 17:56:10,025 - Co-reference_Resolution - INFO - Sentence id: 264@0 
+
+2016-10-31 17:56:10,030 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 17:56:10,030 - Co-reference_Resolution - DEBUG - Error: No VP!	|pronoun_index: 22
+
+2016-10-31 17:56:10,030 - Co-reference_Resolution - DEBUG - Cannot Find directed dominated NP for pronoun the company, and assign subject entity                         --None-- of the prior sentence to this pronoun.
+
+2016-10-31 17:56:10,030 - Co-reference_Resolution - INFO - Last entity is None and update it with topic company (1st sentence)!
+
+2016-10-31 17:56:10,031 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,035 - Co-reference_Resolution - INFO - 264@0 surface labels: S , NP VP .
+2016-10-31 17:56:10,035 - Co-reference_Resolution - INFO - 264@0:DT NN 
+2016-10-31 17:56:10,035 - Co-reference_Resolution - INFO - ~ 264@0:DT NN
+2016-10-31 17:56:10,035 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@0
+
+2016-10-31 17:56:10,035 - Co-reference_Resolution - INFO - Sentence id: 264@1 
+
+2016-10-31 17:56:10,036 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,036 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 264@1
+2016-10-31 17:56:10,036 - Co-reference_Resolution - INFO - Sentence id: 264@2 
+
+2016-10-31 17:56:10,041 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 17:56:10,041 - Co-reference_Resolution - DEBUG - Cannot Find directed dominated NP for pronoun it, and assign subject entity                         --Teleflex Incorporated-- of the prior sentence to this pronoun.
+
+2016-10-31 17:56:10,041 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,044 - Co-reference_Resolution - INFO - 264@2 surface labels: PP , NP VP .
+2016-10-31 17:56:10,045 - Co-reference_Resolution - INFO - 264@2:NNP 
+2016-10-31 17:56:10,045 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@2
+
+2016-10-31 17:56:10,045 - Co-reference_Resolution - INFO - Sentence id: 264@3 
+
+2016-10-31 17:56:10,045 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,046 - Co-reference_Resolution - INFO - 264@3 surface labels: PP , NP VP .
+2016-10-31 17:56:10,046 - Co-reference_Resolution - INFO - 264@3:NNP 
+2016-10-31 17:56:10,046 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@3
+
+2016-10-31 17:56:10,046 - Co-reference_Resolution - INFO - Sentence id: 264@4 
+
+2016-10-31 17:56:10,046 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,056 - Co-reference_Resolution - INFO - 264@4 surface labels: `` NP VP .
+2016-10-31 17:56:10,057 - Co-reference_Resolution - INFO - 264@4:DT NNP NN NN 
+2016-10-31 17:56:10,057 - Co-reference_Resolution - INFO - Sentence id: 264@5 
+
+2016-10-31 17:56:10,057 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,059 - Co-reference_Resolution - INFO - 264@5 surface labels: NP VP .
+2016-10-31 17:56:10,059 - Co-reference_Resolution - INFO - 264@5:NNP 
+2016-10-31 17:56:10,059 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@5
+
+2016-10-31 17:56:10,060 - Co-reference_Resolution - INFO - Sentence id: 264@6 
+
+2016-10-31 17:56:10,060 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,063 - Co-reference_Resolution - INFO - 264@6 surface labels: SBAR , NP VP .
+2016-10-31 17:56:10,063 - Co-reference_Resolution - INFO - 264@6:NNP 
+2016-10-31 17:56:10,063 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@6
+
+2016-10-31 17:56:10,063 - Co-reference_Resolution - INFO - Sentence id: 264@7 
+
+2016-10-31 17:56:10,066 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 17:56:10,066 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,069 - Co-reference_Resolution - INFO - 264@7 surface labels: NP VP .
+2016-10-31 17:56:10,069 - Co-reference_Resolution - INFO - 264@7:NNP 
+2016-10-31 17:56:10,070 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 264@7
+
+2016-10-31 17:56:10,072 - Co-reference_Resolution - INFO - Sentence id: 264@8 
+
+2016-10-31 17:56:10,072 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,072 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 264@8
+2016-10-31 17:56:10,072 - Co-reference_Resolution - INFO - Sentence id: 264@9 
+
+2016-10-31 17:56:10,073 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 17:56:10,073 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 264@9
+2016-10-31 18:00:46,791 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 265
+2016-10-31 18:00:46,791 - Co-reference_Resolution - INFO - Sentence id: 265@0 
+
+2016-10-31 18:00:46,795 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 18:00:46,795 - Co-reference_Resolution - DEBUG - Error: No VP!	|pronoun_index: 22
+
+2016-10-31 18:00:46,796 - Co-reference_Resolution - DEBUG - Cannot Find directed dominated NP for pronoun the company, and assign subject entity                         --None-- of the prior sentence to this pronoun.
+
+2016-10-31 18:00:46,796 - Co-reference_Resolution - INFO - Last entity is None and update it with topic company (1st sentence)!
+
+2016-10-31 18:00:46,796 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,800 - Co-reference_Resolution - INFO - 265@0 surface labels: S , NP VP .
+2016-10-31 18:00:46,800 - Co-reference_Resolution - INFO - 265@0:DT NN 
+2016-10-31 18:00:46,800 - Co-reference_Resolution - INFO - ~ 265@0:DT NN
+2016-10-31 18:00:46,800 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@0
+
+2016-10-31 18:00:46,801 - Co-reference_Resolution - INFO - Sentence id: 265@1 
+
+2016-10-31 18:00:46,801 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,801 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 265@1
+2016-10-31 18:00:46,802 - Co-reference_Resolution - INFO - Sentence id: 265@2 
+
+2016-10-31 18:00:46,804 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 18:00:46,804 - Co-reference_Resolution - DEBUG - Cannot Find directed dominated NP for pronoun it, and assign subject entity                         --Teleflex Incorporated-- of the prior sentence to this pronoun.
+
+2016-10-31 18:00:46,804 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,809 - Co-reference_Resolution - INFO - 265@2 surface labels: PP , NP VP .
+2016-10-31 18:00:46,809 - Co-reference_Resolution - INFO - 265@2:NNP 
+2016-10-31 18:00:46,809 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@2
+
+2016-10-31 18:00:46,809 - Co-reference_Resolution - INFO - Sentence id: 265@3 
+
+2016-10-31 18:00:46,809 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,810 - Co-reference_Resolution - INFO - 265@3 surface labels: PP , NP VP .
+2016-10-31 18:00:46,810 - Co-reference_Resolution - INFO - 265@3:NNP 
+2016-10-31 18:00:46,811 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@3
+
+2016-10-31 18:00:46,811 - Co-reference_Resolution - INFO - Sentence id: 265@4 
+
+2016-10-31 18:00:46,811 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,820 - Co-reference_Resolution - INFO - 265@4 surface labels: `` NP VP .
+2016-10-31 18:00:46,820 - Co-reference_Resolution - INFO - 265@4:DT NNP NN NN 
+2016-10-31 18:00:46,821 - Co-reference_Resolution - INFO - Sentence id: 265@5 
+
+2016-10-31 18:00:46,821 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,822 - Co-reference_Resolution - INFO - 265@5 surface labels: NP VP .
+2016-10-31 18:00:46,822 - Co-reference_Resolution - INFO - 265@5:NNP 
+2016-10-31 18:00:46,823 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@5
+
+2016-10-31 18:00:46,823 - Co-reference_Resolution - INFO - Sentence id: 265@6 
+
+2016-10-31 18:00:46,823 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,825 - Co-reference_Resolution - INFO - 265@6 surface labels: SBAR , NP VP .
+2016-10-31 18:00:46,825 - Co-reference_Resolution - INFO - 265@6:NNP 
+2016-10-31 18:00:46,825 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@6
+
+2016-10-31 18:00:46,825 - Co-reference_Resolution - INFO - Sentence id: 265@7 
+
+2016-10-31 18:00:46,828 - Co-reference_Resolution - INFO - ----Search dominated np for pd----
+
+2016-10-31 18:00:46,828 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,831 - Co-reference_Resolution - INFO - 265@7 surface labels: NP VP .
+2016-10-31 18:00:46,831 - Co-reference_Resolution - INFO - 265@7:NNP 
+2016-10-31 18:00:46,831 - Co-reference_Resolution - INFO - UPDATE LAST ENTITY to be 265@7
+
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - Sentence id: 265@8 
+
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 265@8
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - Sentence id: 265@9 
+
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - ----Search subject entity of sentence----
+
+2016-10-31 18:00:46,832 - Co-reference_Resolution - INFO - No organization detected from sentence! Sen_id: 265@9
+2016-10-31 18:09:00,579 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 266
+2016-10-31 18:37:39,163 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 1
+2016-10-31 18:37:41,902 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 2
+2016-10-31 18:37:41,902 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 2
+2016-10-31 18:39:40,978 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 3
+2016-10-31 18:39:40,978 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 3
+2016-10-31 18:39:40,978 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 3
+2016-10-31 18:39:43,171 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 4
+2016-10-31 18:39:43,171 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 4
+2016-10-31 18:39:43,171 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 4
+2016-10-31 18:39:43,171 - Co-reference_Resolution - INFO - Co-reference Resolution initialized for doc 4

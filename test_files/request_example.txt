@@ -1,0 +1,9 @@
+/* 
+html_content ->  html of the web page
+url ->  url of the web page
+event -> 'None', 'IPO', 'Layoff' (only 3 options available)
+*/
+data3 = {'html': html_content,
+        'url': 'http://www.bizjournals.com/austin/blog/techflash/2016/04/dell-cybersecurity-arm-slashes-ipo-price-shares.html',
+        'event': 'IPO'
+        }
