@@ -1,0 +1,3 @@
+CREATE USER nlp_user WITH PASSWORD 'ThePassw0rd';
+CREATE DATABASE "nlp";
+GRANT ALL PRIVILEGES ON DATABASE "nlp" to nlp_user;
