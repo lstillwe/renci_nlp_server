@@ -38,3 +38,5 @@ Other things to notice:\
 -Directory '/test_files' is just some simple tests to validate the server work properly. \
 -If you want to use test file, you need to install 'Request' library first. Run: pip install requests in your shell.  
 
+Added capability to Dockerize
+-Should change passwords in create_db.sql and config.ini to correspond
