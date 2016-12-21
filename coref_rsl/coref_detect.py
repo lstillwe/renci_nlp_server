@@ -123,13 +123,15 @@ def load_data(cur, doc_id):
     else:
         news_time = sql_result['news_time']
         news_title = sql_result['news_title']
-    sql = '''SELECT coref_offset, coreferences FROM doc_coreference WHERE document_id = %s ORDER BY coref_offset;'''
-    cur.execute(sql, (doc_id,))
-    sql_results = cur.fetchall()
-    corefs = {r['coref_offset']: r['coreferences'] for r in sql_results}
-
-    nlp_info = {'sen_id':sentence_ids, 'word':words, 'lemma':lemmas, 'ner':ner_tags, 'pos':pos_tags,
-                'dependency':dependencies, 'parse_tree': parse_trees, 'cr':corefs}
+    # the commented code used to get Co-reference result parsed from Stanford NLP, but it is not supported now.
+    # sql = '''SELECT coref_offset, coreferences FROM doc_coreference WHERE document_id = %s ORDER BY coref_offset;'''
+    # cur.execute(sql, (doc_id,))
+    # sql_results = cur.fetchall()
+    # corefs = {r['coref_offset']: r['coreferences'] for r in sql_results}
+    # nlp_info = {'sen_id':sentence_ids, 'word':words, 'lemma':lemmas, 'ner':ner_tags, 'pos':pos_tags,
+    #             'dependency':dependencies, 'parse_tree': parse_trees, 'cr':corefs}
+    nlp_info = {'sen_id': sentence_ids, 'word': words, 'lemma': lemmas, 'ner': ner_tags, 'pos': pos_tags,
+                'dependency': dependencies, 'parse_tree': parse_trees}
     return nlp_info, news_time, news_title
 
 
@@ -146,6 +148,7 @@ def coref_rsl(doc_id, db_name, username, pwd, host):
         # Initialize our CR approach instance and get our CR process result
         cr = CR(nlp_info, topic_company, doc_id)
         cr_result = cr.entity_coref_rsl()
+
         '''
         # Code under comment aims at
         # merging stanford CR result (nlp_info['coref']) with our naive CR result (cr_result)

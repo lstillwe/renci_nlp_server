@@ -8,14 +8,7 @@ RUN yum -y install wget
 
 # Install postgresql and setup database
 RUN rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-3.noarch.rpm
-RUN yum -y install postgresql94 postgresql94-server postgresql94-contrib postgresql94-devel; ln -s /usr/pgsql-9.4/bin/pg_config /usr/bin/pg_config
-RUN service postgresql-9.4 initdb; service postgresql-9.4 start; sleep 5;
-# Create nlp_user, database, and tables
-USER postgres
-RUN psql -a -f create_db.sql; psql -d nlp -a -f setup_db.sql;
-
-# Back to root user
-USER root
+RUN yum -y install postgresql94 postgresql94-server postgresql94-contrib postgresql94-devel; ln -s /usr/pgsql-9.4/bin/pg_config /usr/bin/pg_config; service postgresql-9.4 initdb; sed -i 's/^host[ \t]*all[ \t]*all[ \t]*127\.0\.0\.1\/32[ \t]*ident/host  all  all  127\.0\.0\.1\/32  password/' /var/lib/pgsql/9.4/data/pg_hba.conf
 
 # Install Java 1.8
 RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz; tar -xzf jdk-8u111-linux-x64.tar.gz; cd jdk1.8.0_111/;  alternatives --install /usr/bin/java java /jdk1.8.0_111/bin/java 1
@@ -33,10 +26,14 @@ RUN mv stanford-corenlp-full-2015-12-09 renci_nlp_server/stanford-corenlp; cp re
 RUN mv stanford_corenlp_pywrapper-master renci_nlp_server/stanford_corenlp_pywrapper
 RUN cd renci_nlp_server; source ./bin/activate; cd stanford_corenlp_pywrapper; pip install .; cd ..; pip install -r requirements.txt
 
+# Create nlp_user, database, and tables
+#USER postgres
+#RUN /usr/pgsql-9.4/bin/pg_ctl -D /var/lib/pgsql/9.4/data start &; psql -a -f create_db.sql; psql -d nlp -a -f setup_db.sql;
+#CMD su -l postgres -c 'nohup /usr/pgsql-9.4/bin/pg_ctl start -s -l /var/lib/pgsql/9.4/pgsql.log -D /var/lib/pgsql/9.4/data'; chkconfig postgresql-9.4 on; psql -a -f create_db.sql; psql -d nlp -a -f setup_db.sql;
+
 #ADD ./start.sh /start.sh
 # RUN echo %sudo        ALL=NOPASSWD: ALL >> /etc/sudoers
 #EXPOSE 3306
-#CMD ["/bin/bash", "/start.sh"]`
 
-
+#CMD ["/bin/bash", "renci_nlp_server/start.sh"]`
 CMD ["/bin/bash"]`

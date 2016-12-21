@@ -3,7 +3,8 @@ from stanford_corenlp_pywrapper import CoreNLP
 import psycopg2
 import psycopg2.extras
 import logging
-proc = CoreNLP("coref", corenlp_jars=["./stanford-corenlp/*"])
+#proc = CoreNLP("coref", corenlp_jars=["./stanford-corenlp/*"])
+proc = CoreNLP(configdict={"annotators":"tokenize, ssplit, pos, lemma, ner, parse"}, corenlp_jars=["./stanford-corenlp/*"])
 
 
 def nlp_process_article(html_result):
@@ -37,8 +38,10 @@ def nlp_process_article(html_result):
                    people=html_result['people'])
     search_company(sentence_ids, words, ner_tags, pos_tags, companies=html_result['company'],
                    people=html_result['people'])
+    #result = {'ner_tag': ner_tags, 'pos_tag': pos_tags, 'lemma': lemmas, 'word': words, 'sentence_id': sentence_ids,
+              #'parse_tree': parse_trees, 'deps_cc': deps_ccs, 'entity': result['entities'], 'news_id': html_result['news_id']}
     result = {'ner_tag': ner_tags, 'pos_tag': pos_tags, 'lemma': lemmas, 'word': words, 'sentence_id': sentence_ids,
-              'parse_tree': parse_trees, 'deps_cc': deps_ccs, 'entity': result['entities'], 'news_id': html_result['news_id']}
+              'parse_tree': parse_trees, 'deps_cc': deps_ccs, 'news_id': html_result['news_id']}
     return result
 
 
@@ -56,18 +59,18 @@ def update_ner_db(r, db_name, username, pwd, host):
             cur.execute(sql, (r['news_id'], ' '.join(r['word'][i]), r['word'][i], r['lemma'][i], r['pos_tag'][i], r['deps_cc'][i], r['ner_tag'][i], r['parse_tree'][i], i, r['sentence_id'][i]))
             con.commit()
 
-        coref_count = 0
-        for mention in r['entity']:
-            coref_pairs = []
-            cur = con.cursor()
-            if len(mention['mentions']) > 1:
-                for entity in mention['mentions']:
-                    coref_pairs.append('{}@{}@{}'.format(entity['sentence'], *entity['tokspan_in_sentence']))
-                coref_id = '{}@{}'.format(r['news_id'], coref_count)
-                sql = 'INSERT INTO doc_coreference (document_id, coreferences, coref_offset, coref_id) \
-                            VALUES(%s, %s, %s, %s);'
-                cur.execute(sql, (r['news_id'], coref_pairs, coref_count, coref_id))
-                coref_count += 1
+        #coref_count = 0
+        #for mention in r['entity']:
+            #coref_pairs = []
+            #cur = con.cursor()
+            #if len(mention['mentions']) > 1:
+                #for entity in mention['mentions']:
+                    #coref_pairs.append('{}@{}@{}'.format(entity['sentence'], *entity['tokspan_in_sentence']))
+                #coref_id = '{}@{}'.format(r['news_id'], coref_count)
+                #sql = 'INSERT INTO doc_coreference (document_id, coreferences, coref_offset, coref_id) \
+                            #VALUES(%s, %s, %s, %s);'
+                #cur.execute(sql, (r['news_id'], coref_pairs, coref_count, coref_id))
+                #coref_count += 1
 
         con.commit()
         logging.info('DOCUMENT {} , SENTENCE {} IN TOTAL'.format(r['news_id'], sen_num))
