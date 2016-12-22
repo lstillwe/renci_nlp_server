@@ -7,9 +7,10 @@ su -l postgres -c 'psql -a -f /renci_nlp_server/create_db.sql >>start.log 2>&1'
 su -l postgres -c 'psql -d nlp -a -f /renci_nlp_server/setup_db.sql >>start.log 2>&1'
 
 # activate virtual env for nlp server
-source /renci_nlp_server/bin/activate
+cd /renci_nlp_server
+source bin/activate
 
 # do stuff here to run server & client to feed html input from CyVerse to the renci_nlp_server
-python /renci_nlp_server/app.py &
+python app.py &
 sleep 10
-python /renci_nlp_server/nlp_client.py
+python nlp_client.py
