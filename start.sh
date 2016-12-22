@@ -8,4 +8,4 @@ su -l postgres -c 'psql -d nlp -a -f /renci_nlp_server/setup_db.sql >>start.log 
 source /renci_nlp_server/bin/activate
 
 # do stuff here to run client to feed html input from CyVerse to the renci_nlp_server
-python /renci_nlp_server/nlp_client
+python /renci_nlp_server/nlp_client.py

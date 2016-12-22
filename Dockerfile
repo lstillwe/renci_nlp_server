@@ -2,9 +2,7 @@ FROM centos:centos6.7
 MAINTAINER Lisa Stillwell <lisa@renci.org>
 
 
-RUN yum -y update; yum clean all
-RUN yum -y install epel-release; yum clean all
-RUN yum -y install wget
+RUN yum -y update; yum clean all; yum -y install epel-release; yum clean all; yum -y install wget
 
 # Install postgresql and setup database
 RUN rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-3.noarch.rpm
@@ -22,14 +20,7 @@ RUN yum -y install python-pip; pip install --upgrade pip; pip install virtualenv
 RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip; unzip stanford-corenlp-full-2015-12-09.zip; rm stanford-corenlp-full-2015-12-09.zip
 RUN wget wget https://github.com/brendano/stanford_corenlp_pywrapper/archive/master.zip; unzip master.zip; rm master.zip
 RUN wget https://github.com/lstillwe/renci_nlp_server/archive/master.zip; unzip master.zip; cp -r renci_nlp_server-master/* renci_nlp_server; rm master.zip
-RUN mv stanford-corenlp-full-2015-12-09 renci_nlp_server/stanford-corenlp; cp renci_nlp_server/stanford-corenlp/stanford-corenlp-full-2015-12-09/*.jar renci_nlp_server/stanford-corenlp
-RUN mv stanford_corenlp_pywrapper-master renci_nlp_server/stanford_corenlp_pywrapper
-RUN cd renci_nlp_server; source ./bin/activate; cd stanford_corenlp_pywrapper; pip install .; cd ..; pip install -r requirements.txt
-
-# Create nlp_user, database, and tables
-#USER postgres
-#RUN /usr/pgsql-9.4/bin/pg_ctl -D /var/lib/pgsql/9.4/data start &; psql -a -f create_db.sql; psql -d nlp -a -f setup_db.sql;
-#CMD su -l postgres -c 'nohup /usr/pgsql-9.4/bin/pg_ctl start -s -l /var/lib/pgsql/9.4/pgsql.log -D /var/lib/pgsql/9.4/data'; chkconfig postgresql-9.4 on; psql -a -f create_db.sql; psql -d nlp -a -f setup_db.sql;
+RUN mv stanford-corenlp-full-2015-12-09 renci_nlp_server/stanford-corenlp; cp renci_nlp_server/stanford-corenlp/stanford-corenlp-full-2015-12-09/*.jar renci_nlp_server/stanford-corenlp; mv stanford_corenlp_pywrapper-master renci_nlp_server/stanford_corenlp_pywrapper; cd renci_nlp_server; source ./bin/activate; cd stanford_corenlp_pywrapper; pip install .; cd ..; pip install -r requirements.txt; python -m nltk.downloader -d /usr/local/share/nltk_data wordnet
 
 #ADD ./start.sh /start.sh
 # RUN echo %sudo        ALL=NOPASSWD: ALL >> /etc/sudoers
