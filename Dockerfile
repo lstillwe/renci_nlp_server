@@ -16,7 +16,7 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2
 # Install Python 2.7 and all prereqs
 RUN yum -y install gcc zlib-devel unzip sqlite-devel openssl openssl-devel
 RUN wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz; tar -xzvf Python-2.7.12.tgz; cd Python-2.7.12; ./configure; make; make altinstall
-RUN yum -y install python-pip; pip install --upgrade pip; pip install virtualenv; virtualenv -p /usr/local/bin/python2.7 renci_nlp_server
+RUN yum -y install python-pip; pip install --upgrade pip; pip install virtualenv requests; virtualenv -p /usr/local/bin/python2.7 renci_nlp_server
 
 # Download and install all NLP code
 RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip; unzip stanford-corenlp-full-2015-12-09.zip; rm stanford-corenlp-full-2015-12-09.zip
@@ -35,5 +35,5 @@ RUN cd renci_nlp_server; source ./bin/activate; cd stanford_corenlp_pywrapper; p
 # RUN echo %sudo        ALL=NOPASSWD: ALL >> /etc/sudoers
 #EXPOSE 3306
 
-#CMD ["/bin/bash", "renci_nlp_server/start.sh"]`
-CMD ["/bin/bash"]`
+CMD ["/bin/bash", "renci_nlp_server/start.sh"]`
+#CMD ["/bin/bash"]`
