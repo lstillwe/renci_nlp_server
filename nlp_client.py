@@ -2,7 +2,7 @@ import sys
 import requests
 
 biz_html_file = open('/renci_nlp_server/test_files/raw_news_for_ipo_test.html', 'r')
-html_content = biz_htm_file.read()
+html_content = biz_html_file.read()
 #print html_content
 
 # need to get "url" or some equivalent somewhere - input var?
