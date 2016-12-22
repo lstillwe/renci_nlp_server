@@ -11,9 +11,10 @@ cd /renci_nlp_server
 source bin/activate
 
 # do stuff here to run server & client to feed html input from CyVerse to the renci_nlp_server
-FILE_TO_WATCH=nohup.out
-SEARCH_PATTERN='INFO:CoreNLP_PyWrapper:Subprocess is ready.'
-nohup python app.py &
+FILE_TO_WATCH=./nohup.out
+SEARCH_PATTERN='INFO:CoreNLP_PyWrapper:Subprocess'
+nohup python app.py >nohup.out 2>&1 &
+sleep 5
 timeout --signal=SIGINT 60 tail -f -n0 ${FILE_TO_WATCH} | grep -qe ${SEARCH_PATTERN}
 if [ $? == 1 ]; then
     echo "ERROR: NLP Server failed to initialize"
