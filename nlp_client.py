@@ -2,6 +2,10 @@ import sys
 import requests
 
 event = sys.argv[1]
+if ((event == "LAYOFF") || (event == "layoff)):
+	event = "Layoff"
+elif (event == "ipo"):
+	event = "IPO"
 html_file = sys.argv[2]
 
 #biz_html_file = open('/renci_nlp_server/test_files/raw_news_for_ipo_test.html', 'r')
