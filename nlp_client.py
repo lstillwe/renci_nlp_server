@@ -8,6 +8,8 @@ elif (event == "ipo"):
 	event = "IPO"
 html_file = sys.argv[2]
 
+result_file_name = event + "_nlp_results.json"
+
 #biz_html_file = open('/renci_nlp_server/test_files/raw_news_for_ipo_test.html', 'r')
 biz_html_file = open(html_file, 'r')
 html_content = biz_html_file.read()
@@ -24,4 +26,10 @@ thedata = {'html': html_content,
 r = requests.post('http://127.0.0.1:5000/nlp', data=thedata)
 
 # write to output file here
-print r.text
+result_file = open(result_file_name, 'w')
+result_file.write(r.text)
+#print r.text
+
+# done - close up everything
+biz_html_file.close()
+result_file.close()
