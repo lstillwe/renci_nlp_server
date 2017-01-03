@@ -2,7 +2,7 @@ import sys
 import requests
 
 event = sys.argv[1]
-if ((event == "LAYOFF") or (event == "layoff)):
+if ((event == "LAYOFF") or (event == "layoff")):
 	event = "Layoff"
 elif (event == "ipo"):
 	event = "IPO"
