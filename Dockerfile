@@ -1,6 +1,6 @@
 MAINTAINER Lisa Stillwell <lisa@renci.org>
 
-ENV NPL_DIR /renci_nlp_server
+ENV NLP_DIR /renci_nlp_server
 WORKDIR $NLP_DIR
 
 RUN yum -y update \
