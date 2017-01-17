@@ -1,3 +1,4 @@
+FROM centos:centos6.7
 MAINTAINER Lisa Stillwell <lisa@renci.org>
 
 ENV NLP_DIR /renci_nlp_server
