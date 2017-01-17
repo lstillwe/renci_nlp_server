@@ -18,8 +18,9 @@ RUN rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.
 	&& sed -i 's/^host[ \t]*all[ \t]*all[ \t]*127\.0\.0\.1\/32[ \t]*ident/host  all  all  127\.0\.0\.1\/32  password/' /var/lib/pgsql/9.4/data/pg_hba.conf
 
 # Install Java 1.8
-RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F \
-	&& oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
+#RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F \
+#	&& oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
+RUN curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k "https://edelivery.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
 	&& tar -xzf jdk-8u111-linux-x64.tar.gz \
 	&& cd jdk1.8.0_111/ \
 	&&  alternatives --install /usr/bin/java java /jdk1.8.0_111/bin/java 1
@@ -58,4 +59,4 @@ RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip \
 
 ENTRYPOINT ["/bin/bash", "start.sh"]
 # for testing:
-# CMD ["/bin/bash"]`
+# CMD ["/bin/bash"]
