@@ -21,13 +21,15 @@ RUN rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.
 #	&& oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
 RUN curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k "https://edelivery.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz" \
 	&& tar -xzf jdk-8u111-linux-x64.tar.gz \
+	&& rm jdk-8u111-linux-x64.tar.gz \
 	&& cd jdk1.8.0_111/ \
-	&&  alternatives --install /usr/bin/java java /jdk1.8.0_111/bin/java 1
+	&&  alternatives --install /usr/bin/java java $NLP_DIR/jdk1.8.0_111/bin/java 1
 
 # Install Python 2.7 and all prereqs
 RUN yum -y install gcc zlib-devel unzip sqlite-devel openssl openssl-devel \
 	&& wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz \
 	&& tar -xzvf Python-2.7.12.tgz \
+	&& rm Python-2.7.12.tgz \
 	&& cd Python-2.7.12 \
 	&& ./configure; make; make altinstall \
 	&& yum -y install python-pip \
@@ -39,11 +41,11 @@ RUN yum -y install gcc zlib-devel unzip sqlite-devel openssl openssl-devel \
 RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip \
 	&& unzip stanford-corenlp-full-2015-12-09.zip \
 	&& rm stanford-corenlp-full-2015-12-09.zip \
-	&& wget wget https://github.com/brendano/stanford_corenlp_pywrapper/archive/master.zip \
+	&& wget https://github.com/brendano/stanford_corenlp_pywrapper/archive/master.zip \
 	&& unzip master.zip; rm master.zip \
 	&& wget https://github.com/lstillwe/renci_nlp_server/archive/master.zip \
 	&& unzip master.zip \
-	&& mv renci_nlp_server-master/* $NLP_DIR; rm master.zip \
+	&& mv renci_nlp_server-master/* $NLP_DIR; rm master.zip; rm -rf renci_nlp_server-master \
 	&& mv stanford-corenlp-full-2015-12-09 stanford-corenlp \
 	&& cp stanford-corenlp/stanford-corenlp-full-2015-12-09/*.jar stanford-corenlp \
 	&& mv stanford_corenlp_pywrapper-master stanford_corenlp_pywrapper \
