@@ -1,4 +1,3 @@
-FROM centos:centos6.7
 MAINTAINER Lisa Stillwell <lisa@renci.org>
 
 ENV NPL_DIR /renci_nlp_server
@@ -20,7 +19,7 @@ RUN rpm -Uvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.
 # Install Java 1.8
 #RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F \
 #	&& oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
-RUN curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k "https://edelivery.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz \
+RUN curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k "https://edelivery.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz" \
 	&& tar -xzf jdk-8u111-linux-x64.tar.gz \
 	&& cd jdk1.8.0_111/ \
 	&&  alternatives --install /usr/bin/java java /jdk1.8.0_111/bin/java 1
