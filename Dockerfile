@@ -43,7 +43,7 @@ RUN wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip \
 	&& unzip master.zip; rm master.zip \
 	&& wget https://github.com/lstillwe/renci_nlp_server/archive/master.zip \
 	&& unzip master.zip \
-	&& mv renci_nlp_server-master/* $NLP_DIR; rm master.zip; rm renci_nlp_server-master \
+	&& mv renci_nlp_server-master/* $NLP_DIR; rm master.zip \
 	&& mv stanford-corenlp-full-2015-12-09 stanford-corenlp \
 	&& cp stanford-corenlp/stanford-corenlp-full-2015-12-09/*.jar stanford-corenlp \
 	&& mv stanford_corenlp_pywrapper-master stanford_corenlp_pywrapper \
