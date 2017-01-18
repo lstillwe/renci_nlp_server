@@ -6,7 +6,7 @@ if ((event == "LAYOFF") or (event == "layoff")):
 	event = "Layoff"
 elif (event == "ipo"):
 	event = "IPO"
-html_file = sys.argv[2]
+html_file = "/renci_nlp_server/input/" +sys.argv[2]
 
 result_file_name = event + "_nlp_results.json"
 
