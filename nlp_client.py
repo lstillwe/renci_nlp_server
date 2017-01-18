@@ -1,14 +1,16 @@
 import sys
 import requests
 
+workspacedir = "/renci_nlp_server/scratch/"
+
 event = sys.argv[1]
 if ((event == "LAYOFF") or (event == "layoff")):
 	event = "Layoff"
 elif (event == "ipo"):
 	event = "IPO"
-html_file = "/renci_nlp_server/input/" +sys.argv[2]
+html_file = workspacedir + sys.argv[2]
 
-result_file_name = event + "_nlp_results.json"
+result_file_name = workspacedir + event + "_nlp_results.json"
 
 #biz_html_file = open('/renci_nlp_server/test_files/raw_news_for_ipo_test.html', 'r')
 biz_html_file = open(html_file, 'r')
